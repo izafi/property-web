@@ -1,120 +1,98 @@
-import React from 'react'
+import React from "react";
 
 const Project = () => {
+  const projects = [
+    {
+      image: "/imgi_3_project_img_1-3elwKRsQ.jpg",
+      name: "Skyline Haven",
+      location: "California",
+      price: "$2,50,000",
+    },
+    {
+      image: "/imgi_4_project_img_2-DnQUAazb.jpg",
+      name: "Vista Verde",
+      location: "San Francisco",
+      price: "$2,50,000",
+    },
+    {
+      image: "/imgi_5_project_img_3-3sNYAKXT.jpg",
+      name: "Serenity Suites",
+      location: "Chicago",
+      price: "$2,50,000",
+    },
+    {
+      image: "/imgi_6_project_img_4-C5CE8mdZ.jpg",
+      name: "Central Square",
+      location: "Los Angeles",
+      price: "$2,50,000",
+    },
+    {
+      image: "/imgi_7_project_img_5-DXUdfqvc.jpg",
+      name: "Vista Verde",
+      location: "San Francisco",
+      price: "$2,50,000",
+    },
+    {
+      image: "/imgi_8_project_img_6-PJDGxfJF.jpg",
+      name: "Serenity Suites",
+      location: "Chicago",
+      price: "$2,50,000",
+    },
+  ];
+
   return (
-    <div id='Projects' className="h-auto w-full bg-[#FFFFFF] flex flex-col items-center gap-5 py-20">
+    <section
+      id="Projects"
+      className="h-auto w-full bg-white flex flex-col items-center gap-5 py-14 sm:py-16 md:py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-24"
+    >
+      {/* Heading */}
+      <div className="flex flex-col justify-center items-center gap-4 sm:gap-5 text-center">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
+          Projects Completed
+        </h1>
 
-      <div className="flex flex-col justify-center items-center gap-5">
-
-        <h1 className="text-4xl font-bold">Projects Completed</h1>
-
-        <p className="text-lg font-normal text-[#364153] text-center">Crafting Spaces, Building Legacies—Explore Our Portfolio</p>
+        <p className="text-base sm:text-lg font-normal text-[#364153]">
+          Crafting Spaces, Building Legacies—Explore Our Portfolio
+        </p>
       </div>
 
-      <div className='grid grid-cols-3 grid-rows-2 gap-5'>
+      {/* Projects Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-7 lg:gap-8 mt-8 sm:mt-10 w-full max-w-7xl">
+        {projects.map((project, index) => (
+          <div
+            key={index}
+            className="w-full flex flex-col shadow-md rounded-[12px] pb-[6px] group cursor-pointer overflow-hidden"
+          >
+            {/* Image */}
+            <div className="h-[250px] sm:h-[260px] md:h-[280px] w-full bg-[#F5F5F5] flex justify-center items-center overflow-hidden">
+              <img
+                className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                src={project.image}
+                alt={project.name}
+              />
+            </div>
 
-        {/* box 1 */}
+            {/* Content */}
+            <div className="p-4 sm:p-5 flex flex-col justify-center items-start">
+              <h2 className="text-lg sm:text-xl text-[#1e2939] font-semibold leading-7">
+                {project.name}
+              </h2>
 
-        <div className='w-85 flex flex-col justify-center items-left shadow-md rounded-[12px] pb-[6px] group cursor-pointer'>
-          <div className='h-70 w-full o bg-[#F5F5F5] flex justify-center items-center mb-2 overflow-hidden'>
-            <img className='h-70 w-full bject-cover rounded-t-[12px] transition-transform duration-300 group-hover:scale-105 group-hover:rounded-t-[12px]' src="/imgi_3_project_img_1-3elwKRsQ.jpg" alt="project-image" />
+              <p className="text-sm sm:text-base text-[#4a5565] font-normal leading-6">
+                {project.location}
+              </p>
+
+              <span className="mt-2">
+                <p className="text-sm sm:text-base text-[#364153] font-semibold leading-6">
+                  {project.price}
+                </p>
+              </span>
+            </div>
           </div>
-          <div className='p-[16px] flex flex-col justify-center items-start'>
-            <h1 className='text-[20px] text-[#1e2939] font-semibold loading-[28px]'>Skyline Haven</h1>
-            <p className='text-[16px] text-[#4a5565] font-normal loading-[24px]'>California</p>
-            <span className='mt-2'>
-              <h1 className='text-[16px] text-[#364153] font-semibold loading-[24px]'> $2,50,000</h1>
-            </span>
-          </div>
-        </div>
-
-
-        {/* box 2 */}
-
-        <div className='w-85 flex flex-col justify-center items-left shadow-md rounded-[12px] pb-[6px] group cursor-pointer'>
-          <div className='h-70 w-full bg-[#F5F5F5] flex justify-center items-center mb-2 overflow-hidden'>
-            <img className='h-70 w-full object-cover rounded-t-[12px] transition-transform duration-300 group-hover:scale-105 group-hover:rounded-t-[12px]' src="/imgi_4_project_img_2-DnQUAazb.jpg" alt="project-image" />
-          </div>
-          <div className='p-[16px] flex flex-col justify-center items-left'>
-            <h1 className='text-[20px] text-[#1e2939] font-semibold loading-[28px]'>Vista Verde</h1>
-            <p className='text-[16px] text-[#4a5565] font-normal loading-[24px]'>San Francisco</p>
-            <span className='mt-2'>
-              <h1 className='text-[16px] text-[#364153] font-semibold loading-[24px]'> $2,50,000</h1>
-            </span>
-          </div>
-        </div>
-
-        {/* box 3 */}
-
-
-        <div className='w-85 flex flex-col justify-center items-left shadow-md rounded-[12px] pb-[6px] group cursor-pointer'>
-          <div className='h-70 w-full bg-[#F5F5F5] flex justify-center items-center mb-2 overflow-hidden'>
-            <img className='h-70 w-full object-cover rounded-t-[12px] transition-transform duration-300 group-hover:scale-105 group-hover:rounded-t-[12px]' src="/imgi_5_project_img_3-3sNYAKXT.jpg" alt="project-image" />
-          </div>
-          <div className='p-[16px] flex flex-col justify-center items-left'>
-            <h1 className='text-[20px] text-[#1e2939] font-semibold loading-[28px]'>Serenity Suites</h1>
-            <p className='text-[16px] text-[#4a5565] font-normal loading-[24px]'>Chicago</p>
-            <span className='mt-2'>
-              <h1 className='text-[16px] text-[#364153] font-semibold loading-[24px]'> $2,50,000</h1>
-            </span>
-          </div>
-        </div>
-
-        {/* box 4 */}
-
-
-        <div className='w-85 flex flex-col justify-center items-left shadow-md rounded-[12px] pb-[6px] group cursor-pointer'>
-          <div className='h-70 w-full bg-[#F5F5F5] flex justify-center items-center mb-2 overflow-hidden'>
-            <img className='h-70 w-full object-cover rounded-t-[12px] transition-transform duration-300 group-hover:scale-105 group-hover:rounded-t-[12px]' src="/imgi_6_project_img_4-C5CE8mdZ.jpg" alt="project-image" />
-          </div>
-          <div className='p-[16px] flex flex-col justify-center items-left'>
-            <h1 className='text-[20px] text-[#1e2939] font-semibold loading-[28px]'>Central Square</h1>
-            <p className='text-[16px] text-[#4a5565] font-normal loading-[24px]'>Los Angeles
-
-            </p>
-            <span className='mt-2'>
-              <h1 className='text-[16px] text-[#364153] font-semibold loading-[24px]'> $2,50,000</h1>
-            </span>
-          </div>
-        </div>
-
-        {/* box 5 */}
-
-
-        <div className='w-85 flex flex-col justify-center items-left shadow-md rounded-[12px] pb-[6px] group cursor-pointer'>
-          <div className='h-70 w-full  bg-[#F5F5F5] flex justify-center items-center mb-2 overflow-hidden'>
-            <img className='h-70 w-full object-cover rounded-t-[12px] transition-transform duration-300 group-hover:scale-105 group-hover:rounded-t-[12px]' src="/imgi_7_project_img_5-DXUdfqvc.jpg" alt="project-image" />
-          </div>
-          <div className='p-[16px] flex flex-col justify-center items-left '>
-            <h1 className='text-[20px] text-[#1e2939] font-semibold loading-[28px]'>Vista Verde</h1>
-            <p className='text-[16px] text-[#4a5565] font-normal loading-[24px]'>San Francisco</p>
-            <span className='mt-2'>
-              <h1 className='text-[16px] text-[#364153] font-semibold loading-[24px]'> $2,50,000</h1>
-            </span>
-          </div>
-        </div>
-
-        {/* box 6 */}
-
-
-        <div className='w-85 flex flex-col justify-center items-left shadow-md rounded-[12px] pb-[6px] group cursor-pointer'>
-          <div className='h-70 w-full  bg-[#F5F5F5] flex justify-center items-center mb-2 overflow-hidden'>
-            <img className='h-70 w-full object-cover rounded-t-[12px] transition-transform duration-300 group-hover:scale-105 group-hover:rounded-t-[12px]' src="/imgi_8_project_img_6-PJDGxfJF.jpg" alt="project-image" />
-          </div>
-          <div className='p-[16px] flex flex-col justify-center items-left '>
-            <h1 className='text-[20px] text-[#1e2939] font-semibold loading-[28px]'>Serenity Suites</h1>
-            <p className='text-[16px] text-[#4a5565] font-normal loading-[24px]'>Chicago</p>
-            <span className='mt-2'>
-              <h1 className='text-[16px] text-[#364153] font-semibold loading-[24px]'> $2,50,000</h1>
-            </span>
-          </div>
-        </div>
-
+        ))}
       </div>
+    </section>
+  );
+};
 
-
-    </div>
-  )
-}
-
-export default Project
+export default Project;
