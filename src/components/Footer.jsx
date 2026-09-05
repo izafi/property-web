@@ -87,7 +87,7 @@ const Footer = () => {
       {/* Copyright */}
       <div className="mt-8 sm:mt-12 border-t border-gray-600 pt-5 sm:pt-6 text-center">
         <p className="text-gray-400 text-xs sm:text-sm">
-          © 2025 Real Estate. All Rights Reserved.
+          © 2026 Real Estate. All Rights Reserved.
         </p>
       </div>
     </footer>
