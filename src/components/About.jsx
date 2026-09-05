@@ -52,7 +52,7 @@ const Counter = ({ end, suffix = "+" }) => {
   return (
     <p
       ref={counterRef}
-      className="text-[30px] text-[#1e2939] leading-[36px] font-semibold"
+      className="text-[28px] sm:text-[30px] text-[#1e2939] leading-[36px] font-semibold"
     >
       {count}
       {suffix}
@@ -60,74 +60,72 @@ const Counter = ({ end, suffix = "+" }) => {
   );
 };
 
-const Hero = () => {
+const About = () => {
   return (
-    <div
+    <section
       id="About"
-      className="h-auto w-full bg-[#FFFFFF] flex flex-col items-center gap-5 py-20"
+      className="h-auto w-full bg-white flex flex-col items-center gap-5 py-14 sm:py-16 md:py-20 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-24"
     >
       {/* Heading */}
-      <div className="flex flex-col justify-center items-center gap-5">
-        <h1 className="text-4xl font-bold">
-          About <span className="text-3xl underline">Our Brand</span>
+      <div className="flex flex-col justify-center items-center gap-4 sm:gap-5 text-center">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
+          About{" "}
+          <span className="text-2xl sm:text-3xl md:text-4xl underline">
+            Our Brand
+          </span>
         </h1>
 
-        <p className="text-lg font-normal text-[#364153] text-center">
-          Passionate About Properties, Dedicated to <br />
+        <p className="text-base sm:text-lg font-normal text-[#364153] text-center">
+          Passionate About Properties, Dedicated to
+          <br className="hidden sm:block" />
           your vision
         </p>
       </div>
 
       {/* Main Content */}
-      <div className="flex flex-row justify-around items-center mt-10 w-full px-50 gap-5">
+      <div className="flex flex-col lg:flex-row justify-between items-center mt-8 sm:mt-10 w-full gap-10 lg:gap-16">
 
         {/* Image */}
-        <div className="flex flex-col justify-center items-center text-center gap-10 shadow-md rounded-b-[12px]">
-          <img
-            className="object-cover h-65 w-auto rounded-b-[12px]"
-            src="/imgi_2_brand_img-DEuaOSfY.png"
-            alt="Our Brand"
-          />
+        <div className="w-full lg:w-[45%] flex justify-center">
+          <div className="flex justify-center items-center shadow-md rounded-b-[12px] overflow-hidden">
+            <img
+              className="object-cover w-full max-w-[500px] h-[280px] sm:h-[350px] md:h-[400px] lg:h-[430px] rounded-b-[12px]"
+              src="/imgi_2_brand_img-DEuaOSfY.png"
+              alt="Our Brand"
+            />
+          </div>
         </div>
 
         {/* Right Content */}
-        <div className="flex flex-col justify-center items-start text-center gap-10 w-[50%]">
+        <div className="flex flex-col justify-center items-center lg:items-start gap-8 sm:gap-10 w-full lg:w-[50%]">
 
-          {/* Counting Boxes */}
-          <div className="grid grid-cols-2 gap-5 w-full">
+          {/* Counters */}
+          <div className="grid grid-cols-2 gap-y-8 sm:gap-y-10 gap-x-4 sm:gap-x-8 w-full">
 
-            {/* Box 1 */}
-            <div className="flex flex-col justify-center items-center gap-1">
+            <div className="flex flex-col justify-center items-center text-center gap-1">
               <Counter end={10} />
-
-              <p className="text-[18px] text-[#4a5565] leading-[28px] font-normal">
+              <p className="text-sm sm:text-base md:text-[18px] text-[#4a5565] leading-6 sm:leading-7 font-normal">
                 Years of Experience
               </p>
             </div>
 
-            {/* Box 2 */}
-            <div className="flex flex-col justify-center items-center gap-1">
+            <div className="flex flex-col justify-center items-center text-center gap-1">
               <Counter end={12} />
-
-              <p className="text-[18px] text-[#4a5565] leading-[28px] font-normal">
+              <p className="text-sm sm:text-base md:text-[18px] text-[#4a5565] leading-6 sm:leading-7 font-normal">
                 Projects Completed
               </p>
             </div>
 
-            {/* Box 3 */}
-            <div className="flex flex-col justify-center items-center gap-1">
-              <Counter end={20} suffix="+" />
-
-              <p className="text-[18px] text-[#4a5565] leading-[28px] font-normal">
-                Mn.sq.ft. Delivered
+            <div className="flex flex-col justify-center items-center text-center gap-1">
+              <Counter end={20} />
+              <p className="text-sm sm:text-base md:text-[18px] text-[#4a5565] leading-6 sm:leading-7 font-normal">
+                Mn. sq.ft. Delivered
               </p>
             </div>
 
-            {/* Box 4 */}
-            <div className="flex flex-col justify-center items-center gap-1">
+            <div className="flex flex-col justify-center items-center text-center gap-1">
               <Counter end={25} />
-
-              <p className="text-[18px] text-[#4a5565] leading-[28px] font-normal">
+              <p className="text-sm sm:text-base md:text-[18px] text-[#4a5565] leading-6 sm:leading-7 font-normal">
                 Ongoing Projects
               </p>
             </div>
@@ -135,8 +133,8 @@ const Hero = () => {
           </div>
 
           {/* Description */}
-          <div>
-            <p className="text-[18px] font-normal text-[#4a5565] leading-[28px] text-left">
+          <div className="w-full">
+            <p className="text-sm sm:text-base md:text-[18px] font-normal text-[#4a5565] leading-6 sm:leading-7 text-center lg:text-left">
               We specialize in providing high-quality properties that meet
               the diverse needs of our clients. Our brand is built on trust,
               professionalism, and a passion for creating spaces that resonate
@@ -148,8 +146,8 @@ const Hero = () => {
 
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
-export default Hero;
+export default About;
