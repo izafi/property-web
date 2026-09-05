@@ -1,35 +1,32 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 
 const SmoothScroll = () => {
   useEffect(() => {
-    const handleAnchorClick = (e) => {
-      const link = e.target.closest('a[href^="#"]');
-
-      if (!link) return;
-
-      const targetId = link.getAttribute("href");
-
-      if (!targetId || targetId === "#") return;
-
-      const target = document.querySelector(targetId);
+    const handleClick = (e) => {
+      const target = e.target.closest('a[href^="#"]');
 
       if (!target) return;
 
-      e.preventDefault();
+      const id = target.getAttribute("href");
 
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+      if (!id || id === "#") return;
 
-      // URL hash update without jumping
-      window.history.pushState(null, "", targetId);
+      const element = document.querySelector(id);
+
+      if (element) {
+        e.preventDefault();
+
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
     };
 
-    document.addEventListener("click", handleAnchorClick);
+    document.addEventListener("click", handleClick);
 
     return () => {
-      document.removeEventListener("click", handleAnchorClick);
+      document.removeEventListener("click", handleClick);
     };
   }, []);
 
